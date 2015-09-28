@@ -86,7 +86,7 @@ window.onload = function() {
 </script></head><body>
 <div>Anatomie d'une <em>carte web</em></div>
 <div>Auteurs&nbsp;: <a href="http://stamen.com/studio/alan">Alan McConchie</a> :) et <a href="http://stamen.com/studio/beth">Beth Schechter</a> :D<br/>Traduction de <a href="https://github.com/lducerf">Laurent Ducerf</a></div>
-<div>Maintenance&nbsp;!<br>Source ici&nbsp;: <a href="http://sta.mn/qhg">sta.mn/qhg</a>.<br>Les liens sont sur fond bleu, le <em>vert</em> met en relief. Vous pouvez commenter et modifier sur <a href="https://github.com/maptime/anatomy-of-a-web-map/">github</a>&nbsp;!</div>
+<div>Maintenance&nbsp;!<br>Source ici&nbsp;: <a href="http://sta.mn/qhg">sta.mn/qhg</a>.<br>Les liens sont sur fond bleu, le <em>vert</em> met en relief. Vous pouvez commenter et modifier sur <a href="https://github.com/MaptimeAlpes/anatomie-d-une-webmap">github</a>&nbsp;!</div>
 <div>Allez, c'est parti&nbsp;! :)</div>
 <div>Nous allons parler des <em>principes de bases</em> de la cartographie web.</div>
 <div>Nous commencerons par un petit historique, pour que vous compreniez comment les cartes web sont devenues ce quelles sont aujourd'hui.</div>
@@ -111,7 +111,7 @@ window.onload = function() {
 <div><img src="images/osm.png"><a href="http://www.openstreetmap.org/">OpenStreetMap.org</a></div>
 <div><img src="images/google-map.png"><a href="https://www.google.com/maps/preview">maps.google.com</a></div>
 <div><img src="images/mapsdotstamen.png"><a href="http://maps.stamen.com">maps.stamen.com</a></div>
-<div><img src="images/iphone_maps.jpg">Faire des cartes pour les <em>objets mobiles</em> peut être très similaire, mais nous ne parlerons pas de cela aujourd'hui.</div>
+<div><img src="images/iphone_maps.jpg">Faire des cartes pour les <em>terminaux mobiles</em> peut être très similaire, mais nous ne parlerons pas de cela aujourd'hui.</div>
 <div><img src="images/google-earth.png">Nous ne parlerons pas non plus des <em>globes numériques</em> comme <a href="http://www.google.com/earth/">Google Earth</a></div>
 <div><em>bon...</em></div>
 <div>Voici une petite histoire&nbsp;:<br><em>Comment sont arrivées les cartes web&nbsp;?</em></div>
@@ -119,7 +119,7 @@ window.onload = function() {
 <div>Quoiqu'utile, un SIG pour le Web n'est pas très convivial :( </div>
 <div style="color: black"><img src="images/3-map-history/2-Ridgefield-CT-Mapquest-out.jpg">En 1996, MapQuest lance son premier service web.</div>
 <div><img src="images/3-map-history/2-Ridgefield-CT-Mapquest-out.jpg"> <em>tada&nbsp;!</em></div>
-<div>Des indications&nbsp;! En ligne&nbsp;! Révolutionnaire&nbsp;!</div>
+<div>Des itinéraires&nbsp;! En ligne&nbsp;! Révolutionnaire&nbsp;!</div>
 <div>Le problème&nbsp;? C'était trop lent à charger :(</div>
 <div>MapQuest imposait un rafraîchissement complet de la page pour faire défiler ou zoomer, et il était toujours aligné sur les limites de tuiles.</div>
 <div>Début 2005, Google Maps a vraiment ouvert la voie à la cartographie web.</div>
@@ -130,7 +130,7 @@ window.onload = function() {
 <div>Parlons un peu des tuiles. Et pour ce faire, empruntons un peu de matériel à l'incroyable cartographe <a href="http://lyzidiamond.com/">Lyzi Diamond</a> qui possède un paquet d'informations sur les tuiles de <a href="https://www.mapbox.com/">Mapbox</a>.</div>
 <!-- <div><em>Merci à tous&nbsp;! <3 <3 <3</em><br>Maintenant allons-y...</div> -->
 <div>Toutes les tuiles<br>=<br>même taille&nbsp;! 256x256 pixels<br>mêmes limites<img src="images/tiles.gif"></div>
-<div>Les tuiles peuvent être une carte routière, une image satellite, ou n'importe quelle image matricielle&nbsp;!</div>
+<div>Les tuiles peuvent être une carte routière, une image satellite, ou n'importe quelle image raster&nbsp;!</div>
 <div><img src="images/tiles-loading.gif">Toutes ces petites tuiles se chargent <em>bien plus vite</em> qu'une seule grande carte.</div>
 <div>Les cartes web comme celle-là chargent les tuiles qui s'affichent sur votre écran. Si la carte est “intelligente”, elle préchargera les tuiles situées autour de l'écran.</div>
 <div><img src="images/slippy-map.gif">Ce type de carte est communément appelée une <em>carte glissante</em></div>
@@ -140,7 +140,7 @@ window.onload = function() {
 <div><img src="images/tiles/zoom1.png"><em>Zoom niveau 1: 4 tuiles pour le monde.</em></div>
 <div><img src="images/tiles/zoom2-3-4-5.png"><em>Zoom niveau 2, 3, 4, 5</em></div>
 <div><img src="images/tiles/zoom13.png"><em>Zoom niveau 13</em></div>
-<div>Les tuiles sont <em>rendues</em> à l'avance (généralement) puis stockées dans un cache</div>
+<div>Les tuiles sont <em>calculées</em> à l'avance (généralement) puis stockées dans un cache</div>
 <div>Les tuiles des cartes sont de simples images en ligne, vous pouvez pointer dessus individuellement.</div>
 <div>Exemple&nbsp;: <a href="http://tile.openstreetmap.org/4/2/6.png">http://tile.openstreetmap.org/4/2/6.png</a></div>
 <div>Pour comprendre comment ça fonctionne, décomposons l'URL.</div>
@@ -151,9 +151,9 @@ window.onload = function() {
 <div><a href="http://commons.wikimedia.org/wiki/File:1855_Colton_Map_of_the_World_on_Mercator_Projection_-_Geographicus_-_WorldMercator-colton-1855.jpg"><img src="images/mercator.jpg"></a></div>
 <div>Nous verrons d'autres projections plus tard...!</div>
 <div>Bref, toutes les autres cartes glissantes et les logiciels associés ont adopté la solution de Google à base de tuiles.</div>
-<div>Sans surprise, une collection de <em>tuiles matricielles</em> constitue ce qu'on appelle la <em>couche de base</em> d'une carte.</div>
-<div>Lorsqu'on ajoute des éléments par-dessus, on parle de <em>couche de données</em>, <em>couche de contenu</em> ou <em>couche de fonctionnalités</em>.</div>
-  <div>*(Toutes les cartes web ne possèdent pas de couche de contenu, mais elles sont assez courantes.)</div>
+<div>Sans surprise, une collection de tuiles <em>raster</em> constitue ce qu'on appelle le <em>fond de plan</em> de la carte.</div>
+<div>Lorsqu'on ajoute des éléments par-dessus, on parle de <em>couche de données</em>, <em>couche de contenu</em> ou <em>couche d'entités</em>.</div>
+<div>*(Toutes les cartes web ne possèdent pas de couche de contenu, mais elles sont assez courantes.)</div>
 <div>Il s'agit généralement de couches <em>vectorielles</em> (des points, des lignes, des polygones). Parfois elles sont interactives (un clic peut faire surgir une fenêtre par exemple).</div>
 <div>Types de fichiers&nbsp;: les SIG utilisent des <em>fichiers de formes</em>, mais les cartes web préfèrent le <em>KML</em>, ou plus récemment le <a href="http://github.com/lyzidiamond/learn-geojson">GeoJSON</a></div>
 <div>Voici comment ces pièces s'assemblent&nbsp;:</div>
@@ -173,13 +173,13 @@ window.onload = function() {
 <div>Javascript&nbsp;: nous recommandons <a href="http://leafletjs.com">Leaflet</a>, quoiqu'il en existe d'autres&nbsp;: <a href="http://openlayers.org">OpenLayers</a> (qui opère un “comeback”) / <a href="http://modestmaps.com">Modest Maps</a> / <a href="http://polymaps.org">Polymaps</a></div>
 <div>Et n'oubliez pas&nbsp;: <a href="https://developers.google.com/maps/documentation/javascript/">Google Maps API</a> / <a href="http://www.microsoft.com/maps/choose-your-bing-maps-API.aspx">Bing Maps API</a> / <a href="https://developer.here.com/javascript-apis">Nokia HERE Maps API</a> / <a href="https://developers.arcgis.com/en/javascript/">ESRI ArcGIS API</a></div>
 <div>3 exceptions à cette histoire simplifiée&nbsp;!</div>
-<div>Exception n°1&nbsp;: Les tuiles sont toujours matricielles <em>SAUF</em> quand elles ne le sont pas&nbsp;!</div>
+<div>Exception n°1&nbsp;: Les tuiles sont toujours des rasters <em>SAUF</em> quand elles ne le sont pas&nbsp;!</div>
 <div><img src="images/vector_tiles.png"><em>Des tuiles vectorielles&nbsp;!</em> Kezako&nbsp;?<br> <a href="http://bl.ocks.org/wboykinm/7393674">(démo sans rapport)</a></div>
-<div>Les <a href="https://www.mapbox.com/blog/vector-tiles/">tuiles vectorielles</a> sont une alternative à une base de donnée qui fabrique des tuiles matricielles. Elles sont tout de même rendues sous forme matricielle pour l'affichage</div>
-<div><em>Matriciel&nbsp;:</em> je demande les données à placer sur la tuile</div>
-<div><em>Vectoriel&nbsp;:</em> j'ai déjà les données vectorielles, découpées pour fabriquer des tuiles matricielles</div>
+<div>Les <a href="https://www.mapbox.com/blog/vector-tiles/">tuiles vectorielles</a> sont une alternative à une base de donnée qui fabrique des tuiles rasters. Elles sont tout de même calculer en raster pour l'affichage</div>
+<div><em>Raster&nbsp;:</em> je demande les données à placer sur la tuile</div>
+<div><em>Vectoriel&nbsp;:</em> j'ai déjà les données vectorielles, découpées pour fabriquer des tuiles raster</div>
 <div>Donc quelqu'un doit parcourir et hacher ces données, par exemple <a href="https://www.mapbox.com/blog/vector-tiles/">MapBox</a>.</div>
-<div>Exception n°2&nbsp;: Pas d'interaction possible sur une image matricielle. MAIS <a href="https://www.mapbox.com/developers/utfgrid/">UTFGrid</a> (une création Mapbox) la rend possible.</div>
+<div>Exception n°2&nbsp;: Pas d'interaction possible sur une image raster. MAIS <a href="https://www.mapbox.com/guides/an-open-platform/#utfgrid">UTFGrid</a> (une création Mapbox) la rend possible.</div>
 <div style="color: black"><img src="images/utfgrid.png">UTFGrid est une couche invisible de lettres qui servent d'index dans les données cliquables</div>
 <div style="color: black"><img src="images/parks-conservancy.png">Stamen a utilisé cette technique sur la <a href="http://www.parksconservancy.org/map/#/?coords=15:37.8016:-122.4659&date=1394668684907">carte des parcs naturels préservés.</a></div>
 <div>Exception n°3&nbsp;: <a href="http://d3js.org">D3</a> existe en-dehors du monde des tuiles</div>
