@@ -10,3 +10,7 @@ Ceci est une traduction de la présentation [Anatomy-Of-A-Web-Map](http://maptim
 Construite avec [big](http://macwright.org/big/) de [@tmcw](https://github.com/tmcw). Merci à [@lyzidiamond](https://github.com/lyzidiamond) toute la famille #maptime!
 
 Traduction par [@Laurent Ducerf](https://github.com/lducerf)
+
+### Ressources
+- http://thetruesize.com : remise en perpective des surperficies des pays.
+- Tile disk usage : http://wiki.openstreetmap.org/wiki/Tile_disk_usage
